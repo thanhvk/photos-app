@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	h1= title
+	p Express stock photo application.
+	div(id="photos")
+		each obj in photos
+			div(class="photo")
+				h2= obj.name
+				a(href='/photo/#{obj.id}/download')
+					img(src= '/photos/' + obj.path)
